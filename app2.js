@@ -1,29 +1,31 @@
-var express = require("express");
+var express = require('express');
 var app = express();
-var db = require('db');
-var fs = require('fs');
-var bodyParser = require('body-parser');
-app.use(bodyParser.json());
+var mongoose = require('mongoose');
 
-app.listen(3000);
-var obj = {
-    table: []
- };
- obj.table.push({id: 1, name:'mg'});
- var json = JSON.stringify(obj);
-fs.writeFile('jsonfile.json', json, 'utf8', callback);
+mongoose.connect('mongodb+srv://medhavigupta6:mongodb@cluster0-h3jmt.mongodb.net/test?retryWrites=true&w=majority');
 
-app.get("/url", (req, res, next) => {
-    res.json(["Tony","Lisa","Michael","Ginger","Food"]);
+var Schema = mongoose.Schema;
+
+var personSchema = new Schema({
+    name : String,
+    number : String
 });
 
-app.get('/api/get/:id', function(req, res){
-    //get from db
-    res.send(data[id]);
-        //'<html><head></head><body><h1>Hello World!</h1></body></html>');
+var Person = mongoose.model('Person',personSchema);
+
+var medh = Person({
+   name : 'medhavi',
+   number : '123456'
 });
 
-app.post('/api/person', jsonParser, function(req, res){
-    //save to db
-    res.send("TonyFood");
+medh.save(function(err){
+    if (err) throw err;
+    console.log("Person saved!");
 });
+
+//get all the users
+ Person.find({}, function(err, users){
+    if(err) throw err;
+
+    console.log(users);
+ });
