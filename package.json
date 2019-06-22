@@ -1,0 +1,21 @@
+{
+  "name": "project_noob",
+  "version": "1.0.0",
+  "description": "a",
+  "main": "app1.js",
+  "scripts": {
+    "test": "abc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "test"
+  },
+  "keywords": [
+    "a"
+  ],
+  "author": "medhavi",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^5.6.0"
+  }
+}
