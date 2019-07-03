@@ -1,21 +1,16 @@
 {
   "name": "project_noob",
   "version": "1.0.0",
-  "description": "a",
-  "main": "app1.js",
+  "description": "project to get and post api response to db",
+  "main": "server.js",
   "scripts": {
-    "test": "abc"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "test"
-  },
-  "keywords": [
-    "a"
-  ],
-  "author": "medhavi",
+  "author": "Medhavi",
   "license": "ISC",
   "dependencies": {
-    "mongoose": "^5.6.0"
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.2"
   }
 }
